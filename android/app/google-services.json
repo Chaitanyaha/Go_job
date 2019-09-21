@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:136225390817:android:79f5841a866357760db7a0",
         "android_client_info": {
-          "package _name": "com.example.go_job"
+          "package_name": "com.example.go_job"
         }
       },
       "oauth_client": [

@@ -4,10 +4,12 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 
 class HomePage extends StatelessWidget {
 
-  void _signInAnonymously()async{
-    FirebaseUser user = await FirebaseAuth.instance.signInAnonymously();
-    print('${user.uid}');
+  Future<FirebaseUser> _signInAnonymously() async {
+    final authResult =await FirebaseAuth.instance.signInAnonymously();
+      print(authResult.user);
+      return(authResult.user);
   }
+
   List<dynamic> img = [
     AssetImage('images/img1.jpg'),
     AssetImage('images/img2.jpg'),
@@ -34,6 +36,7 @@ class HomePage extends StatelessWidget {
               padding: EdgeInsets.all(25),
             ),
             Text(
+
               'Welcome to',
               style: TextStyle(
                 fontFamily: 'Ubuntu',
@@ -108,7 +111,7 @@ class HomePage extends StatelessWidget {
         elevation: 8,
         child: Icon(Icons.keyboard_arrow_right),
         backgroundColor: Color(0xff2595c7),
-        onPressed: () => _signInAnonymously
+        onPressed: ()  => _signInAnonymously(),
         //Navigator.of(context).pushNamed('/a'),
       ),
     );
